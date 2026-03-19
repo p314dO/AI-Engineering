@@ -1,66 +1,93 @@
-
-def validate_values(value):
+def is_non_negative(value):
     if value < 0:
         return False
     else:
         return True
-    
-def calculate_discount(price, discount):
-    discount_amount = price * discount / 100
-    final_price = price - discount_amount
-    return [final_price , discount_amount]
 
-def calculate_vat(price, vat):
-    vat_amount = price * vat / 100
-    price_with_vat = price + vat_amount
-    return [price_with_vat , vat_amount]
 
-def calculate_tip(price_with_vat, tip_percentage):
-    tip = price_with_vat * tip_percentage / 100
-    final_total = price_with_vat + tip
-    return [final_total, tip]
+def calculate_discount(original_price, discount_rate):
+    discount_amount = original_price * discount_rate / 100
+    discounted_price = original_price - discount_amount
+    return [discounted_price, discount_amount]
 
-def show_summary(base_price,vat_percentage,tip_percentage, discount_percentage, price_after_discount, discount_amount, price_with_vat, vat_amount,final_total, tip):
-    print("Base price: ", base_price)
-    print("Discount percentage: ", discount_percentage)
-    print("VAT percentage: ", vat_percentage)
-    print("Tip percentage: ", tip_percentage)
-    print("Discount amount", discount_amount)
-    print("Price after discount", price_after_discount)
-    print("VAT Amount:" , vat_amount)
-    print("Price with VAT: ", price_with_vat)
-    print("Tip: ", tip)
-    print("Price with TIP: ", final_total)
-    
-    
+
+def calculate_vat(discounted_price, vat_rate):
+    vat_amount = discounted_price * vat_rate / 100
+    subtotal_with_vat = discounted_price + vat_amount
+    return [subtotal_with_vat, vat_amount]
+
+
+def calculate_tip(subtotal_with_vat, tip_rate):
+    tip_amount = subtotal_with_vat * tip_rate / 100
+    final_total = subtotal_with_vat + tip_amount
+    return [final_total, tip_amount]
+
+
+def display_summary(
+    original_price,
+    discount_rate,
+    vat_rate,
+    tip_rate,
+    discounted_price,
+    discount_amount,
+    subtotal_with_vat,
+    vat_amount,
+    final_total,
+    tip_amount,
+):
+    print("Base price: ", original_price)
+    print("Discount percentage: ", discount_rate)
+    print("VAT percentage: ", vat_rate)
+    print("Tip percentage: ", tip_rate)
+    print("Discount amount: ", discount_amount)
+    print("Price after discount: ", discounted_price)
+    print("VAT amount: ", vat_amount)
+    print("Price with VAT: ", subtotal_with_vat)
+    print("Tip amount: ", tip_amount)
+    print("Final total: ", final_total)
+
 
 def main():
-    base_price = float(input("Insert the base price of the product: "))
-    
-    if(validate_values(base_price)):
-        discount_percentage = float(input("Insert the discount percentage of the product: "))
-        
-        if(validate_values(discount_percentage)):
-            vat_percentage = float(input("Insert the VAT percentage of the product: "))
-            
-            if(validate_values(vat_percentage)):
-                tip_percentage = float(input("Insert the tip percentage of the product: "))
-                
-                if(validate_values(tip_percentage)):
-                    # TODO Logic Business Here 
-                    
-                    price_after_discount, discount_amount = calculate_discount(base_price, discount_percentage)
-                    
-                    price_with_vat, vat_amount = calculate_vat(price_after_discount, vat_percentage)
-                    
-                    final_total, tip = calculate_tip(price_with_vat, tip_percentage)
-                    
-                    show_summary(base_price,vat_percentage, tip_percentage,discount_percentage, price_after_discount, discount_amount,price_with_vat, vat_amount,final_total, tip )
-                    
+    original_price = float(input("Insert the base price of the product: "))
+
+    if is_non_negative(original_price):
+        discount_rate = float(input("Insert the discount percentage of the product: "))
+
+        if is_non_negative(discount_rate):
+            vat_rate = float(input("Insert the VAT percentage of the product: "))
+
+            if is_non_negative(vat_rate):
+                tip_rate = float(input("Insert the tip percentage of the product: "))
+
+                if is_non_negative(tip_rate):
+                    discounted_price, discount_amount = calculate_discount(
+                        original_price, discount_rate
+                    )
+
+                    subtotal_with_vat, vat_amount = calculate_vat(
+                        discounted_price, vat_rate
+                    )
+
+                    final_total, tip_amount = calculate_tip(
+                        subtotal_with_vat, tip_rate
+                    )
+
+                    display_summary(
+                        original_price,
+                        discount_rate,
+                        vat_rate,
+                        tip_rate,
+                        discounted_price,
+                        discount_amount,
+                        subtotal_with_vat,
+                        vat_amount,
+                        final_total,
+                        tip_amount,
+                    )
                 else:
                     print("The tip cannot be less than zero. Bye Bye")
             else:
-                print("The vat cannot be less than zero. Bye Bye")
+                print("The VAT cannot be less than zero. Bye Bye")
         else:
             print("The discount cannot be less than zero. Bye Bye")
     else:
@@ -69,5 +96,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
