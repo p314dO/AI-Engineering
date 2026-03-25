@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - Python for Data Analysis/02 - Fundamentos del lenguaje Python, IPython y Jupyter Notebooks.md",
+                "file": "01 - Python for Data Analysis/03 - Estructuras de datos, funciones y archivos integrados.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02 - Fundamentos del lenguaje Python, IPython y Jupyter Notebooks"
+              "title": "03 - Estructuras de datos, funciones y archivos integrados"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 483.5,
-    "collapsed": true
+    "width": 483.5
   },
   "right": {
     "id": "d3108563b9f6e33c",
@@ -186,8 +185,11 @@
   },
   "active": "eb350aae9385225c",
   "lastOpenFiles": [
-    "01 - Python for Data Analysis/README.md",
     "01 - Python for Data Analysis/02 - Fundamentos del lenguaje Python, IPython y Jupyter Notebooks.md",
+    "01 - Python for Data Analysis/03 - Estructuras de datos, funciones y archivos integrados.md",
+    "01 - Python for Data Analysis/Untitled.ipynb",
+    "01 - Python for Data Analysis/hello_world.py",
+    "01 - Python for Data Analysis/README.md",
     "01 - Python for Data Analysis/book.jpeg",
     "Libros de O’Reilly para estudiar LLMs, prompt_context engineering, agentes, RAG, evals y LLMOps.pdf",
     "07 - Hands-On Large Language Models/images/Pasted image 20260322203639.png",
@@ -214,10 +216,8 @@
     "05 - Practical MLOps/README.md",
     "04 - Designing Machine Learning Systems/00 - Prefacio.md",
     "05 - Practical MLOps/book.jpeg.crdownload",
-    "05 - Practical MLOps",
     "04 - Designing Machine Learning Systems/README.md",
     "03 - Hands-On Machine Learning with Scikit-Learn and pyTorch/Part 01. The Fundamentals of Machine Learning/01. The Machine Learning Landscape.md",
-    "04 - Designing Machine Learning Systems/book.jpeg.crdownload",
     "03 - Hands-On Machine Learning with Scikit-Learn and pyTorch/00 - Prefacio.md",
     "03 - Hands-On Machine Learning with Scikit-Learn and pyTorch/README.md",
     "02 - Designing Data-Intensive Applications/01 - Compromisos en la arquitectura de sistemas de datos.md",
