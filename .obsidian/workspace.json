@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 483.5
+    "width": 483.5,
+    "collapsed": true
   },
   "right": {
     "id": "d3108563b9f6e33c",
@@ -185,6 +186,7 @@
   },
   "active": "eb350aae9385225c",
   "lastOpenFiles": [
+    "Pasted image 20260514021841.png",
     "12 - Learning LangChain/00. Preface.md",
     "12 - Learning LangChain/01. LLM Fundamentals with LangChain.md",
     "01 - Data Science from Scratch/README.md",
