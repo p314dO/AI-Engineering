@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - Data Science from Scratch/README.md",
+                "file": "12 - Learning LangChain/01. LLM Fundamentals with LangChain.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "01. LLM Fundamentals with LangChain"
             }
           }
         ]
@@ -185,9 +185,11 @@
   },
   "active": "eb350aae9385225c",
   "lastOpenFiles": [
+    "12 - Learning LangChain/00. Preface.md",
+    "12 - Learning LangChain/01. LLM Fundamentals with LangChain.md",
+    "01 - Data Science from Scratch/README.md",
     "01 - Data Science from Scratch/book.webp",
     "01 - Data Science from Scratch/images/dsf2_0101.png",
-    "01 - Data Science from Scratch/README.md",
     "logo.jpg",
     "Libros de O’Reilly para estudiar LLMs, prompt_context engineering, agentes, RAG, evals y LLMOps.pdf",
     "31 - Deep Learning for Coders with fastai & PyTorch/1. Getting Started/1. Getting Started.md",
@@ -215,7 +217,6 @@
     "07 - Hands-On Large Language Models/images/Pasted image 20260323012023.png",
     "07 - Hands-On Large Language Models/images/Pasted image 20260323004507.png",
     "07 - Hands-On Large Language Models/images/Pasted image 20260323004302.png",
-    "07 - Hands-On Large Language Models/images/Pasted image 20260323003830.png",
     "07 - Hands-On Large Language Models/00 - Prefacio.md",
     "07 - Hands-On Large Language Models/README.md",
     "06 - AI Engineering/README.md",
