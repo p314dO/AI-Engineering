@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "26 - Building Generative AI Services with FastAPI/00 - Prefacio.md",
+                "file": "26 - Building Generative AI Services with FastAPI/Part I. Developing AI Services/Capítulo 1. Introducción.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00 - Prefacio"
+              "title": "Capítulo 1. Introducción"
             }
           },
           {
@@ -92,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 483.5
+    "width": 421.5,
+    "collapsed": true
   },
   "right": {
     "id": "d3108563b9f6e33c",
@@ -199,14 +200,22 @@
   },
   "active": "eb350aae9385225c",
   "lastOpenFiles": [
-    "26 - Building Generative AI Services with FastAPI/README.md",
+    "Pasted image 20260527023909.jpg",
+    "Pasted image 20260527023852.png",
+    "Pasted image 20260527023145.png",
+    "Pasted image 20260516102745.png",
+    "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527021418.png",
+    "26 - Building Generative AI Services with FastAPI/images",
+    "26 - Building Generative AI Services with FastAPI/Part I. Developing AI Services/Capítulo 1. Introducción.md",
+    "26 - Building Generative AI Services with FastAPI/01 - Prefacio 2.md",
+    "26 - Building Generative AI Services with FastAPI/Part I. Developing AI Services",
     "26 - Building Generative AI Services with FastAPI/00 - Prefacio.md",
+    "26 - Building Generative AI Services with FastAPI/README.md",
     "31 - Deep Learning for Coders with fastai & PyTorch/book.webp",
     "26 - Building Generative AI Services with FastAPI/book.webp",
     "26 - Building Generative AI Services with FastAPI",
     "12 - Learning LangChain/02. RAG Part I - Indexing Your Data.md",
     "12 - Learning LangChain/01. LLM Fundamentals with LangChain.md",
-    "Pasted image 20260516102745.png",
     "README.md",
     "12 - Learning LangChain/code/test.txt",
     "12 - Learning LangChain/code/tesla.pdf",
@@ -215,18 +224,13 @@
     "12 - Learning LangChain/images/Pasted image 20260515003909.png",
     "12 - Learning LangChain/images/Pasted image 20260514204222.png",
     "12 - Learning LangChain/images/Pasted image 20260514165726.png",
-    "12 - Learning LangChain/images/Pasted image 20260514165529.png",
-    "12 - Learning LangChain/images/Pasted image 20260514162455.png",
     "12 - Learning LangChain/code/Chapter_01.ipynb",
     "12 - Learning LangChain/code",
     "12 - Learning LangChain/00. Preface.md",
     "01 - Data Science from Scratch/README.md",
-    "01 - Data Science from Scratch/book.webp",
     "Libros de O’Reilly para estudiar LLMs, prompt_context engineering, agentes, RAG, evals y LLMOps.pdf",
     "31 - Deep Learning for Coders with fastai & PyTorch/1. Getting Started/1. Getting Started.md",
     "31 - Deep Learning for Coders with fastai & PyTorch/1. Getting Started/6.2'",
-    "31 - Deep Learning for Coders with fastai & PyTorch/1. Getting Started/Is-it-a-bird-Creating-a-model-from-your-own-data.ipynb",
-    "31 - Deep Learning for Coders with fastai & PyTorch/1. Getting Started/Untitled.ipynb",
     "31 - Deep Learning for Coders with fastai & PyTorch/Practical Deep Learning.md",
     "31 - Deep Learning for Coders with fastai & PyTorch/README.md",
     "01 - Python for Data Analysis/03 - Estructuras de datos, funciones y archivos integrados.md",
@@ -241,9 +245,6 @@
     "05 - Practical MLOps/00 - Prefacio.md",
     "05 - Practical MLOps/README.md",
     "04 - Designing Machine Learning Systems/00 - Prefacio.md",
-    "04 - Designing Machine Learning Systems/README.md",
-    "03 - Hands-On Machine Learning with Scikit-Learn and pyTorch/Part 01. The Fundamentals of Machine Learning/01. The Machine Learning Landscape.md",
-    "03 - Hands-On Machine Learning with Scikit-Learn and pyTorch/00 - Prefacio.md",
-    "03 - Hands-On Machine Learning with Scikit-Learn and pyTorch/README.md"
+    "04 - Designing Machine Learning Systems/README.md"
   ]
 }
