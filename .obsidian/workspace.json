@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "12 - Learning LangChain/02. RAG Part I - Indexing Your Data.md",
+                "file": "26 - Building Generative AI Services with FastAPI/00 - Prefacio.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02. RAG Part I - Indexing Your Data"
+              "title": "00 - Prefacio"
+            }
+          },
+          {
+            "id": "4cf2c1aad2c0b9e0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "12 - Learning LangChain/01. LLM Fundamentals with LangChain.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01. LLM Fundamentals with LangChain"
             }
           }
         ]
@@ -185,8 +199,18 @@
   },
   "active": "eb350aae9385225c",
   "lastOpenFiles": [
-    "12 - Learning LangChain/01. LLM Fundamentals with LangChain.md",
+    "26 - Building Generative AI Services with FastAPI/README.md",
+    "26 - Building Generative AI Services with FastAPI/00 - Prefacio.md",
+    "31 - Deep Learning for Coders with fastai & PyTorch/book.webp",
+    "26 - Building Generative AI Services with FastAPI/book.webp",
+    "26 - Building Generative AI Services with FastAPI",
     "12 - Learning LangChain/02. RAG Part I - Indexing Your Data.md",
+    "12 - Learning LangChain/01. LLM Fundamentals with LangChain.md",
+    "Pasted image 20260516102745.png",
+    "README.md",
+    "12 - Learning LangChain/code/test.txt",
+    "12 - Learning LangChain/code/tesla.pdf",
+    "12 - Learning LangChain/code/Chapter_02.ipynb",
     "12 - Learning LangChain/images/Pasted image 20260514021841.png",
     "12 - Learning LangChain/images/Pasted image 20260515003909.png",
     "12 - Learning LangChain/images/Pasted image 20260514204222.png",
@@ -198,24 +222,16 @@
     "12 - Learning LangChain/00. Preface.md",
     "01 - Data Science from Scratch/README.md",
     "01 - Data Science from Scratch/book.webp",
-    "01 - Data Science from Scratch/images/dsf2_0101.png",
-    "logo.jpg",
     "Libros de O’Reilly para estudiar LLMs, prompt_context engineering, agentes, RAG, evals y LLMOps.pdf",
     "31 - Deep Learning for Coders with fastai & PyTorch/1. Getting Started/1. Getting Started.md",
-    "31 - Deep Learning for Coders with fastai & PyTorch/1. Getting Started/xkcd.png",
     "31 - Deep Learning for Coders with fastai & PyTorch/1. Getting Started/6.2'",
     "31 - Deep Learning for Coders with fastai & PyTorch/1. Getting Started/Is-it-a-bird-Creating-a-model-from-your-own-data.ipynb",
     "31 - Deep Learning for Coders with fastai & PyTorch/1. Getting Started/Untitled.ipynb",
     "31 - Deep Learning for Coders with fastai & PyTorch/Practical Deep Learning.md",
     "31 - Deep Learning for Coders with fastai & PyTorch/README.md",
-    "31 - Deep Learning for Coders with fastai & PyTorch/1. Getting Started",
-    "README.md",
-    "01 - Python for Data Analysis/04.ipynb",
-    "01 - Python for Data Analysis/Untitled.ipynb",
     "01 - Python for Data Analysis/03 - Estructuras de datos, funciones y archivos integrados.md",
     "01 - Python for Data Analysis/04 - Conceptos básicos de NumPy - Arreglos y computación vectorizada.md",
     "01 - Python for Data Analysis/02 - Fundamentos del lenguaje Python, IPython y Jupyter Notebooks.md",
-    "01 - Python for Data Analysis/03 - Estructuras de datos, funciones y archivos integrados.ipynb",
     "01 - Python for Data Analysis/README.md",
     "07 - Hands-On Large Language Models/01 - Understand Language Models/01 - Una Introduccion a los Large Language Models.md",
     "07 - Hands-On Large Language Models/00 - Prefacio.md",
@@ -228,7 +244,6 @@
     "04 - Designing Machine Learning Systems/README.md",
     "03 - Hands-On Machine Learning with Scikit-Learn and pyTorch/Part 01. The Fundamentals of Machine Learning/01. The Machine Learning Landscape.md",
     "03 - Hands-On Machine Learning with Scikit-Learn and pyTorch/00 - Prefacio.md",
-    "03 - Hands-On Machine Learning with Scikit-Learn and pyTorch/README.md",
-    "02 - Designing Data-Intensive Applications/01 - Compromisos en la arquitectura de sistemas de datos.md"
+    "03 - Hands-On Machine Learning with Scikit-Learn and pyTorch/README.md"
   ]
 }
