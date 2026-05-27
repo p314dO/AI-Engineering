@@ -11,14 +11,12 @@
             "id": "eb350aae9385225c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "26 - Building Generative AI Services with FastAPI/Part I. Developing AI Services/Capitulo 2. Introduccion a FastAPI.md",
-                "mode": "source",
-                "source": false
+                "file": "12 - Learning LangChain/images/Pasted image 20260516102745.png"
               },
-              "icon": "lucide-file",
-              "title": "Capitulo 2. Introduccion a FastAPI"
+              "icon": "lucide-image",
+              "title": "Pasted image 20260516102745"
             }
           }
         ]
@@ -78,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 421.5,
-    "collapsed": true
+    "width": 421.5
   },
   "right": {
     "id": "d3108563b9f6e33c",
@@ -184,20 +181,19 @@
       "bases:Create new base": false
     }
   },
-  "active": "eb350aae9385225c",
+  "active": "a82cba2e42df56cd",
   "lastOpenFiles": [
-    "Pasted image 20260527154320.png",
-    "Pasted image 20260527154254.png",
-    "Pasted image 20260527154131.png",
-    "Pasted image 20260527154000.png",
-    "Pasted image 20260527153849.png",
-    "Pasted image 20260527153551.png",
-    "Pasted image 20260527153344.png",
-    "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527151059.png",
+    "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527154320.png",
     "26 - Building Generative AI Services with FastAPI/Part I. Developing AI Services/Capitulo 2. Introduccion a FastAPI.md",
+    "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527154254.png",
+    "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527154131.png",
+    "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527154000.png",
+    "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527153849.png",
+    "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527153551.png",
+    "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527153344.png",
+    "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527151059.png",
     "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527150702.png",
     "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527150523.png",
-    "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527142945.png",
     "26 - Building Generative AI Services with FastAPI/README.md",
     "26 - Building Generative AI Services with FastAPI/Part I. Developing AI Services/Capítulo 1. Introducción.md",
     "12 - Learning LangChain/01. LLM Fundamentals with LangChain.md",
