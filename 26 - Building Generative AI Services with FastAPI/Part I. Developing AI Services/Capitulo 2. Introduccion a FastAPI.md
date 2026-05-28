@@ -578,3 +578,169 @@ En los próximos capítulos, utilizarás estos patrones para construir el servic
 A continuación, compararemos FastAPI con otros frameworks.
 
 # Comparación de FastAPI con otros frameworks web de Python
+La mayoría de los frameworks web de Python pueden proporcionarte herramientas para crear puntos finales REST, GraphQL, WebSocket y de otros tipos.
+
+Algunos frameworks tienen una filosofía definida, como Django (Python) y Nestjs (JavaScript), mientras que otros no. Flask o FastAPI (Python) y Express (JavaScript) te ofrecen la opción de diseñar la arquitectura de tu servicio como prefieras.
+
+Los frameworks con una estructura definida, como Django (Python) y Nestjs (JavaScript), toman decisiones por ti basándose en ciertas suposiciones sobre cómo proporcionarás los datos a tus componentes. En la práctica, proporcionan estructura, pero restringen lo que puedes hacer. Por lo general, los frameworks con una estructura definida son más fáciles de usar. Por otro lado, los frameworks no dogmáticos como Flask o FastAPI (Python) y Express (JavaScript) son más flexibles, pero pueden ofrecer demasiada libertad: muchas posibilidades para lograr los mismos resultados.
+
+Debido a que los marcos de trabajo flexibles como FastAPI ofrecen tanta libertad para crear servicios, es posible que experimente cierta fatiga al elegir e integrar cada paquete de soporte por su cuenta. Por ejemplo, para trabajar con una base de datos, deberá instalar e integrar varios paquetes que funcionen bien juntos: uno para acceder a la base de datos, otro para migrarla y otro que actúe como un mapeador objeto-relacional (ORM).
+
+Al hacerlo, es posible que surjan problemas de compatibilidad con paquetes antiguos durante la integración. Esto dificulta el trabajo con frameworks no estandarizados, y a menudo se opta por utilizar un framework estandarizado como Django, que incluye un sistema ORM excelente y perfectamente integrado para interactuar con bases de datos.
+
+Django es un framework completo que se promociona como el "framework web de Python para desarrolladores con plazos de entrega ajustados". Incluye un sistema ORM totalmente integrado y repleto de funciones que se encarga de las migraciones de bases de datos y las necesidades de acceso a los datos cuando se proporcionan los modelos de datos.
+
+Además, te proporciona un panel de administración, un sistema de autenticación y autorización de usuarios basado en credenciales, y varias funciones de seguridad web listas para usar, por lo que no tienes que crearlas tú mismo. También lleva mucho tiempo en el mercado, lo que ha fomentado una comunidad activa que ha producido excelente documentación, tutoriales y otros recursos para el framework. En la versión 4.2 de Django, también se ha introducido el soporte para solicitudes asíncronas, lo que te permite incorporar concurrencia a tus servicios. Django espera que adoptes la arquitectura MVC, lo que requiere que definas modelos de datos y vistas. Estas vistas se convierten en rutas que sirven archivos HTML con plantillas, respuestas JSON o cualquier respuesta HTTP de forma predeterminada, incluso sin depender de `django-rest-framework`. Las capas de controlador contendrán el procesamiento de datos principal y la lógica de negocio.
+
+Esto convierte a Django en una excelente opción para _aplicaciones web progresivas_ (PWA) monolíticas que se implementan como un único backend con un frontend. Sin embargo, a medida que las empresas tienden a crear equipos especializados para el desarrollo de backends y frontends, los patrones arquitectónicos de microservicios se están volviendo más populares. Con los microservicios, se busca separar los servicios de backend y frontend, crear APIs en lugar de PWAs y centrarse en mantener los servicios lo más ligeros posible. Si bien con Django también se pueden crear APIs, se puede terminar con una aplicación pesada que ralentice el desarrollo, la implementación y el escalado de los servicios. Por eso, los frameworks flexibles como Flask están ganando popularidad.. [7](https://learning.oreilly.com/library/view/building-generative-ai/9781098160296/ch02.html#id589)
+
+Flask incluye la menor cantidad de código posible para la creación de servidores web. A diferencia de FastAPI, Flask no incluye validación de datos, autodocumentación ni un sistema de inyección de dependencias. Estas características suelen ser necesarias para desarrollar servicios backend complejos o que requieren integración con bases de datos y servicios externos.
+
+---
+
+**Nota**
+Un nuevo framework web llamado Quart ha intentado solucionar este problema, y ​​se presenta como una buena alternativa a FastAPI. Sin embargo, al momento de escribir este artículo, Quart es relativamente nuevo y, en comparación con otros frameworks, no cuenta con una gran comunidad de usuarios ni con recursos documentados que puedan brindar ayuda en caso de que surja algún problema.
+
+---
+
+Además, Flask se lanzó en 2010 e implementa un protocolo de comunicación llamado _Web Server Gateway Interface_ (WSGI) para el servicio web, lo que significa que las solicitudes se procesan de forma síncrona en comparación con ASGI, que es asíncrono. Asimismo, Flask no está diseñado para manejar un gran número de conexiones simultáneas (como lo haría un framework asíncrono). Sin embargo, esto no limita la cantidad de solicitudes paralelas que el servidor puede manejar por sí solo. En producción, se pueden emplear diversas estrategias (como procesos de trabajo o hilos) para manejar múltiples solicitudes simultáneamente. Además, debido a que Flask implementa WSGI, no admite puntos finales WebSocket, que se utilizan para mantener un canal de comunicación bidireccional persistente entre un cliente y un servidor. Esto se debe a que WSGI no admite WebSocket de forma nativa. Sin embargo, se pueden instalar extensiones de Flask para integrar la compatibilidad con WebSocket.
+
+---
+
+**Asynchronous Server Gateway Interface**
+Los frameworks basados ​​en ASGI pueden procesar múltiples solicitudes ejecutando operaciones asíncronas concurrentes en el bucle principal de eventos, lo que les permite manejar un mayor volumen de solicitudes a gran escala.
+
+También puede utilizar un grupo de subprocesos (es decir, un conjunto de subprocesos de trabajo) para realizar tareas síncronas simultáneamente sin bloquear el subproceso principal del servidor. Una vez finalizadas las tareas, estos subprocesos devuelven el control al subproceso principal del servidor web y comparten sus resultados. Cuando un subproceso genera un error, el servidor web recopila información del subproceso de trabajo y envía una respuesta de error al cliente.
+
+Los marcos de trabajo web modernos que implementan el estándar ASGI no solo son más eficientes, sino que también ofrecen compatibilidad con versiones anteriores de WSGI en caso de ser necesario.
+
+---
+
+Flask, al depender de un servidor WSGI, procesa cada solicitud de forma síncrona, mientras que FastAPI utiliza un bucle de eventos para cargas de trabajo concurrentes. Por lo tanto, FastAPI será mucho más rápido con tareas que requieren mucha entrada/salida (E/S), como por ejemplo, al comunicarse con una API externa o un almacén de datos, lo que bloquearía todo un proceso de trabajo en Flask.
+
+En esencia, recomiendo Django y otros frameworks si quieres crear monolitos PWA, y Flask o Quart para API sencillas, y frameworks en otros lenguajes si tienes más experiencia con ellos.
+
+Sin embargo, si estás creando un servicio de backend que requiere soporte para modelos de IA, conexión a sistemas externos y cierto nivel de complejidad en la lógica de negocio, te recomiendo considerar FastAPI como el framework web más adecuado..
+
+# Limitaciones de FastAPI
+Dadas las características y ventajas mencionadas, también existen varios inconvenientes y desventajas que debe considerar si va a adoptar FastAPI para su proyecto. En lo que respecta a los casos de uso de IA, FastAPI presenta deficiencias en varios aspectos.
+
+## Gestión ineficiente de la memoria del modelo
+FastAPI ofrece mecanismos integrados para compartir la memoria del modelo entre varias instancias o procesos del mismo contenedor. Esto significa que, al escalar los web workers horizontalmente, es necesario cargar una nueva instancia del modelo en la memoria del contenedor. Esto genera un cuello de botella de memoria y aumenta los costos operativos de los servicios de GenAI con alto tráfico.
+
+## Número limitado de hilos
+Existe un límite en la cantidad de subprocesos que FastAPI crea al iniciar la aplicación en el grupo de subprocesos interno. [8](https://learning.oreilly.com/library/view/building-generative-ai/9781098160296/ch02.html#id601)
+
+Esto significa que también existe un límite en cuanto a la escalabilidad de una única instancia de FastAPI, especialmente con cargas de trabajo de IA que implican operaciones de E/S intensivas, así como operaciones que consumen muchos recursos de CPU/GPU. [9](https://learning.oreilly.com/library/view/building-generative-ai/9781098160296/ch02.html#id602)
+
+## Restringido al bloqueo del intérprete global
+En Python, el uso de múltiples hilos puede producir resultados poco intuitivos y, a menudo, contraproducentes debido al _Bloqueo Global del Intérprete_ (GIL).
+
+FastAPI utiliza multihilo mediante un grupo de subprocesos interno para gestionar las solicitudes web concurrentes que llegan a una ruta síncrona. Sin embargo, incluso con puntos finales asíncronos, las solicitudes de inferencia de IA pueden bloquear el bucle principal de eventos, impidiendo que todas las demás solicitudes se procesen en el hilo principal del servidor web.
+
+Esto se debe a que las cargas de trabajo de inferencia de IA son intensivas en CPU/GPU. Las operaciones que no son de E/S, como servir un modelo costoso o agregar grandes cantidades de datos en un trabajador, harán que otros hilos esperen, ya que Python actualmente no utiliza múltiples núcleos para la gestión de hilos. [10](https://learning.oreilly.com/library/view/building-generative-ai/9781098160296/ch02.html#id607) En cambio, como aprenderá más en [el Capítulo 5](https://learning.oreilly.com/library/view/building-generative-ai/9781098160296/ch05.html#ch05) , para este tipo de operaciones de cálculo costosas, deberá utilizar multiprocesamiento o un grupo de procesos.
+
+## Falta de soporte para solicitudes de inferencia de procesamiento por micro-lotes
+Los marcos de aprendizaje profundo ofrecen soporte para la vectorización, lo que permite agrupar las inferencias, calcularlas de forma eficiente y paralelizarlas. Desafortunadamente, en FastAPI no es posible agrupar las solicitudes de predicción, lo que provoca que cada operación de inferencia de modelo, que requiere mucha computación, bloquee otras solicitudes.
+
+Al escalar los servicios, una solución consiste en servir los modelos complejos por separado y utilizar FastAPI para autenticar y gestionar los datos entrantes y salientes.
+
+## No es posible dividir eficientemente las cargas de trabajo de IA entre la CPU y la GPU.
+Si bien la CPU se encarga principalmente de las operaciones de transformación y validación de solicitudes, la GPU puede ejecutar y paralelizar la inferencia de modelos que requiere mucha computación. En algunos marcos de trabajo web especializados en aprendizaje automático (como BentoML), también es posible dividir de manera eficiente las cargas de trabajo de IA entre la CPU y la GPU.
+
+---
+
+**Nota**
+Al dividir las cargas de trabajo de IA entre la CPU y la GPU, la preparación de datos y las operaciones de posprocesamiento se ejecutan en la CPU, mientras que la inferencia de aprendizaje profundo, más rápida, se realiza en la GPU.
+
+---
+
+Lamentablemente, FastAPI no puede distribuir eficientemente la carga de trabajo de inferencia de IA entre estos dispositivos. Esto significa que la CPU puede bloquearse e impedir el procesamiento de solicitudes incluso cuando se ejecutan procesos de inferencia en la GPU. Dado que esto representa un importante cuello de botella al trabajar con modelos complejos, será necesario servir dichos modelos fuera de FastAPI para cargas de trabajo concurrentes.
+
+Analizaremos con más detalle las soluciones a esta limitación en [el Capítulo 5](https://learning.oreilly.com/library/view/building-generative-ai/9781098160296/ch05.html#ch05) .
+
+## Conflictos de dependencia
+Al implementar modelos de aprendizaje automático, se enfrentará a desafíos únicos en comparación con la implementación de aplicaciones web típicas. Esto se debe al profundo acoplamiento del entorno de ejecución del modelo con las bibliotecas nativas y el hardware. Cada entorno de implementación puede operar en hardware distinto y puede requerir el uso de versiones específicas de bibliotecas nativas y comandos de contenerización.
+
+## Falta de soporte para cargas de trabajo de IA que requieren muchos recursos.
+A pesar de sus increíbles capacidades, FastAPI se desarrolló antes del auge de la IA generativa. Por ello, sigue siendo un framework web de propósito general con soporte reciente para la implementación de IA y flujos de trabajo de aprendizaje automático. Sin embargo, para ciertos casos de uso, como la implementación de modelos complejos con miles de millones de parámetros que consumen muchos recursos, puede ser conveniente explorar otros frameworks como _BentoML_ .
+
+---
+
+**BentoML: Marco de trabajo inspirado en FastAPI para ejecutar modelos de IA que consumen muchos recursos.**
+BentoML también se basa en Starlette y está diseñado teniendo en cuenta los patrones de FastAPI, pero específicamente para el aprendizaje automático. Su arquitectura permite escalar las solicitudes web de forma independiente de la inferencia del modelo, lo que proporciona flexibilidad en la computación de distribuciones.
+
+Aborda los desafíos únicos del flujo de trabajo de aprendizaje automático mediante sus sistemas de ejecución, gestión de dependencias y control de versiones de modelos. Gracias a su sistema de gestión de dependencias, puede acelerar eficazmente las implementaciones al generar automáticamente Dockerfiles de forma declarativa, evitando así la necesidad de depurar comandos complejos de Docker para instalar y usar las bibliotecas CUDA para la inferencia en GPU.
+
+Más adelante en el libro, presentaré una arquitectura FastAPI para flujos de trabajo de IA que requieren muchos recursos y que utiliza BentoML como servidor de IA subyacente. En esta arquitectura, las tareas de servicio de modelos se delegarán a BentoML, mientras que FastAPI gestionará la seguridad, el almacenamiento en caché y la lógica de negocio.
+
+---
+
+En los siguientes capítulos, aprenderá a crear su propio servicio GenAI con FastAPI.
+
+Pero antes de seguir adelante, configuremos las herramientas necesarias de Python, como analizadores de código, formateadores y verificadores de tipos, en su entorno de desarrollo para facilitar el mantenimiento de su proyecto FastAPI mientras trabajamos juntos en él.
+
+# Configuración de un entorno y herramientas Python gestionados
+Para mantener un entorno de desarrollo estable y reproducible, es recomendable gestionar el entorno y las dependencias de Python.
+
+Recomiendo:
+- Using a _requirements.txt_ file with `pip` for simpler projects
+- Using [uv](https://oreil.ly/Qxl7h) or [Conda](https://oreil.ly/Kfsc4) for `pip`-driven workflows
+- Using [Poetry](https://oreil.ly/Rt04z) for more complex projects
+
+Además de gestionar las dependencias, Python también cuenta con varios paquetes de terceros que permiten analizar y formatear el código antes de implementarlo en producción. [11](https://learning.oreilly.com/library/view/building-generative-ai/9781098160296/ch02.html#id618)
+
+Se recomienda a los desarrolladores profesionales de Python que utilicen estas herramientas para detectar errores durante el desarrollo y antes de añadir cambios al repositorio de código. De hecho, recomiendo que realicen comprobaciones de código con estas herramientas con frecuencia para evitar que aparezcan errores en sus servicios.
+
+Aquí tienes una lista no exhaustiva de paquetes de Python que recomiendo integrar en cualquier proyecto que inicies:
+
+**Linters**
+Estas herramientas analizan el código fuente para detectar errores de programación, errores de estilo y fragmentos de código no utilizados:
+- _Autoflake_ : Elimina importaciones y variables no utilizadas del código para mejorar la legibilidad.
+- _Flake8_ : Comprueba si cumple con las propuestas de mejora de Python (PEP) y los estilos de código.
+
+**Formateadores**
+Esto te permite ver mejor lo que has escrito:
+- _isort_ : Ordena las importaciones en los módulos de Python.
+- _Black_ : Formatea el código Python para facilitar su lectura.
+- _Ruff_ : Linter y formateador basado en Rust que es extremadamente rápido y puede usarse como reemplazo de otras herramientas como `isort`, `black`, `flake8`, y posiblemente `bandit`[12](https://learning.oreilly.com/library/view/building-generative-ai/9781098160296/ch02.html#id621)
+
+Loggers
+Se utiliza en las partes del código que resultan complejas de depurar y monitorizar la aplicación:
+- _Loguru_ : Reemplazando el módulo de registro integrado de Python
+
+Escáneres
+Si quieres tener la certeza de que no has introducido código o contraseñas inseguras por casualidad:
+- _Bandit_ : Escaneo de vulnerabilidades de tu código Python con comprobación de problemas de seguridad comunes, como secretos codificados.
+- _Safety_ : Escáner de vulnerabilidades de dependencias de Python para detectar paquetes con vulnerabilidades conocidas o paquetes maliciosos.
+
+Type checkers
+Para detectar aquellos errores que los analizadores de código normales no detectan. Además, es ideal si quieres tener la seguridad de que los cambios en tus esquemas no han dañado tu aplicación.
+- _Mypy_ : Un potente verificador de tipos estático que puede ayudar a detectar muchos errores en tu código.
+- _Pylance_ : Un verificador de tipos que viene incluido con la extensión de Python de Microsoft para VS Code.
+
+Como parte de tu entorno de desarrollo, también es recomendable utilizar sistemas de control de versiones como Git para realizar un seguimiento de los cambios en el código fuente, gestionar las diferentes versiones de tu proyecto y administrar las contribuciones de código de otros desarrolladores.
+
+---
+
+**Consejo**
+Al usar Git, también puedes agregar archivos _.gitignore_ para ayudarte a administrar los archivos y directorios que deseas excluir del seguimiento del control de versiones.
+
+---
+
+Los entornos de desarrollo integrados (IDE), como VS Code o JetBrains PyCharm, ofrecen complementos para ejecutar estas herramientas mientras escribes o guardas tu trabajo. Suelen requerir cierta configuración, pero una vez hecha, tendrás el formato automático y el análisis estático listos antes de empezar. En cualquier caso, recomiendo tener un script o hooks de pre-commit que analicen, revisen y den formato a tu código antes de confirmar los cambios o implementarlo en producción.
+
+Estos son fundamentos de la programación en Python y la ingeniería de software. Se volverán cruciales cuando comience a trabajar con modelos de IA que pueden generar resultados probabilísticos, así como con servicios externos y bases de datos cuyos esquemas pueden cambiar en cualquier momento. Mantener una aplicación de IA que cambia de esquema y de parámetros constantemente sin las herramientas mencionadas puede convertirse rápidamente en un verdadero quebradero de cabeza.
+
+# Resumen
+En este capítulo, aprendiste sobre el framework FastAPI, incluyendo sus capacidades y desventajas en comparación con otros frameworks.
+
+También aprendiste a configurar tu propio proyecto FastAPI desde cero, junto con un conjunto de herramientas que puedes usar para mejorar tu experiencia de desarrollo.
+
+A continuación, se te presentaron varias estructuras de proyecto que puedes adoptar al crear tu propio servicio FastAPI. Como parte de esto, aprendiste más sobre el patrón de diseño de software en capas (o de cebolla) para ayudarte a gestionar la complejidad del proyecto.
+
+Por último, hemos hablado de las herramientas que puedes usar para gestionar tus entornos Python y ayudarte a mantener el código fuente de FastAPI a medida que aumenta su complejidad.
+
+Ahora ya deberías sentirte cómodo iniciando tus propios proyectos FastAPI y gestionando la complejidad del proyecto a medida que evoluciona con el tiempo.
+
+En el próximo capítulo, aprenderá a implementar sus propias funciones GenAI en FastAPI para generar texto, imágenes, audio y video. Comprenderá el funcionamiento interno de cada modelo y el papel del sistema de ciclo de vida de FastAPI en la entrega de modelos, aprovechando las GPU de NVIDIA para las tareas de inferencia. Finalmente, se le presentará el sistema de tareas en segundo plano de FastAPI para descargar las operaciones de inferencia de larga duración.

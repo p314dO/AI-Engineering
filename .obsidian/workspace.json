@@ -11,12 +11,14 @@
             "id": "eb350aae9385225c",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "12 - Learning LangChain/images/Pasted image 20260516102745.png"
+                "file": "26 - Building Generative AI Services with FastAPI/Part I. Developing AI Services/Capitulo 2. Introduccion a FastAPI.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260516102745"
+              "icon": "lucide-file",
+              "title": "Capitulo 2. Introduccion a FastAPI"
             }
           }
         ]
@@ -181,8 +183,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "a82cba2e42df56cd",
+  "active": "eb350aae9385225c",
   "lastOpenFiles": [
+    "12 - Learning LangChain/images/Pasted image 20260516102745.png",
     "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527154320.png",
     "26 - Building Generative AI Services with FastAPI/Part I. Developing AI Services/Capitulo 2. Introduccion a FastAPI.md",
     "26 - Building Generative AI Services with FastAPI/images/Pasted image 20260527154254.png",
